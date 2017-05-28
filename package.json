@@ -1,0 +1,52 @@
+{
+  "name": "qiaosuan",
+  "version": "0.9.0",
+  "description": "Media Data Spider",
+  "private": true,
+  "main": "./run.js",
+  "bin": {
+    "run": "./run.js"
+  },
+  "scripts": {
+    "start": "node run.js",
+    "test": "node test/test.js"
+  },
+  "dependencies": {
+    "async": "^2.4.1",
+    "basic-auth-connect": "^1.0.0",
+    "body-parser": "^1.17.2",
+    "cheerio": "^0.22.0",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.3",
+    "debug": "^2.6.8",
+    "eventproxy": "^0.3.5",
+    "express": "^4.15.3",
+    "fetch": "^1.1.0",
+    "ioredis": "^3.0.0",
+    "kue": "^0.11.5",
+    "kue-ui-express": "^1.0.2",
+    "log4js": "^1.1.1",
+    "minimist": "^1.2.0",
+    "moment": "^2.18.1",
+    "morgan": "^1.8.2",
+    "neo-async": "^2.1.0",
+    "node-schedule": "^1.2.3",
+    "nodemailer": "^4.0.1",
+    "optimist": "^0.6.1",
+    "redis": "^2.7.1",
+    "request": "^2.81.0",
+    "restc": "0.0.7",
+    "socket.io": "^2.0.1",
+    "trim-html": "^0.1.9"
+  },
+  "author": "Front end group of Mei Miao",
+  "repository": {
+    "type": "git",
+    "url": "http://git.meimiao.net/qiaosuan_spider/code.git"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.3.0"
+  }
+}
