@@ -77,6 +77,14 @@ const server = () => {
   const spider = new (require('./sendServer'))(settings);
   spider.start();
 };
+const view = () => {
+  const logger = logging.getLogger('数据展示', options.i, logLevel);
+  settings.logger = logger;
+  settings.instance = options.i;
+  settings.port = 3000;
+  const spider = new (require('./viewModule'))(settings);
+  spider.start();
+};
 const statusMonitor = () => {
   const logger = logging.getLogger('状态监控', options.i, logLevel);
   settings.logger = logger;
@@ -442,6 +450,9 @@ switch (options.a) {
     break;
   case 'server':
     server();
+    break;
+  case 'view':
+    view();
     break;
   case 'monitor':
     statusMonitor();
