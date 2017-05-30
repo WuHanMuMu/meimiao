@@ -1,0 +1,38 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#app{
+    width: 1100px;
+    margin: 0 auto;
+}
+.spider-title{
+    margin: 20px 0 10px;
+    font-size: 30px;
+    text-align: center;
+}
+/* 平台认证 */
+.platform{
+    text-align: center;
+}
+.platform-title{
+    padding: 15px 0;
+    font-size: 16px;
+}
+.el-input{
+    width: 50%;
+    margin: 0 auto;
+}
+.el-table--fit{
+    margin-top: 30px;
+    text-align: center;
+}
+.el-table__body-wrapper{
+    overflow-x: hidden;
+}
+.el-table__header thead th{
+    text-align: center;
+}
+.el-icon-search{
+    cursor: pointer;
+}

@@ -1,11 +1,39 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/reset.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>作品</title>
+  <link rel="stylesheet" href="/stylesheets/public/reset.css">
+  <link rel="stylesheet" href="/stylesheets/public/element.css">
+  <link rel="stylesheet" href="/stylesheets/spider.css">
+</head>
+<div id="app">
+    <h1 class="spider-title">爬虫流程展示</h1>
+    <template>
+        <el-tabs type="border-card">
+            <el-tab-pane label="平台认证">
+                <div class="platform">
+                    <p class="platform-title">请输入一个视频平台的播放详情页链接（仅限已支持的平台）</p>
+                    <el-input placeholder="请输入一个播放链接" v-model="input">
+                        <el-button slot="append" icon="search" v-on:click="ceshi(input)"></el-button>
+                    </el-input>
+                    <el-table :data="tableData" height="500" border style="width: 100%" v-loading="loading" element-loading-text="拼命加载中">
+                        <el-table-column prop="platform" label="平台名称" width="200"></el-table-column>
+                        <el-table-column prop="name" label="自媒体名称" width="200"></el-table-column>
+                        <el-table-column prop="bid" label="自媒体ID" width="200"></el-table-column>
+                        <el-table-column prop="avatar" label="自媒体头像"></el-table-column>
+                    </el-table>
+                </div>
+            </el-tab-pane>
+            <el-tab-pane label="视频信息抓取">视频信息抓取</el-tab-pane>
+            <el-tab-pane label="视频的评论信息">视频的评论信息</el-tab-pane>
+            <el-tab-pane label="评论用户信息">评论用户信息</el-tab-pane>
+        </el-tabs>
+    </template>
+</div>
+<script src="/javascripts/lib/vue.min.js"></script>
+<script src="/javascripts/lib/vue-router.js"></script>
+<script src="/javascripts/lib/element.js"></script>
+<script src="/javascripts/spider.js"></script>
+</body>
 </html>

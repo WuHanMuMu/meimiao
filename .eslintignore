@@ -14,3 +14,4 @@ monitor/controllers/mSpiderServer.js
 monitor/public/**/*.js
 servant/dealWith.js
 #spider/*/*.js
+viewModule/public/javascripts/*.js
