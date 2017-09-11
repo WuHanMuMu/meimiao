@@ -4,7 +4,7 @@
  */
 const app = require('./app');
 const http = require('http');
-const redis = require('./lib/myredis').start();
+const redis = require('./lib/myredis').start('192.168.1.31:6379', 14);
 
 let logger;
 class view {

@@ -4,8 +4,8 @@
  */
 const Redis = require('ioredis');
 
-exports.start = () => {
-  const myRedis = new Redis('redis://:C19prsPjHs52CHoA0vm@192.168.0.101:6379/14', {
+exports.start = (host, db) => {
+  const myRedis = new Redis(`redis://:C19prsPjHs52CHoA0vm@${host}/${db}`, {
     reconnectOnError(err) {
       return err.message.slice(0, 'READONLY'.length) === 'READONLY';
     }
