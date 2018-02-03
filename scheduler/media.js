@@ -42,6 +42,7 @@ class mediaScheduler {
         // this.emit('task_loaded',test_data)
         const rule = new schedule.RecurrenceRule();
         const osName = os.hostname();
+        this.logger.trace('os name', osName);
         // if (osName === 'iFabledeMacBook-Pro.local') {
         if (osName === 'iZt4n0b9sw5qoog46blmorZ') {
           this.createServer();
@@ -130,6 +131,7 @@ class mediaScheduler {
     res.end(JSON.stringify({ status: 'ok' }));
   }
   getTask() {
+    // 这里获取任务
     request.get(this.settings.url, (err, res, body) => {
       if (err) {
         this.logger.error('occur error : ', err);

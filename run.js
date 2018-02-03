@@ -34,17 +34,25 @@ if (options.h) {
   userArgv.showHelp();
   process.exit();
 }
+// 这里默认的i 是master
 const settings = require(`./instance/${options.i}/settings.json`);
 settings.instance = options.i;
 // log level
 let logLevel = 'TRACE';
 let spiderDir;
+// 这里默认的t 是 video
 if (options.t === 'video') {
   spiderDir = './spider/';
 } else {
   spiderDir = './spiderComment/';
 }
 if (settings.log_level)logLevel = settings.log_level;
+
+// settings = {
+//     logger: "日志库",
+//     instance:"实例", master 
+//     type:"类型"  视频 或者 评论
+// }
 const scheduler = () => {
   const logger = logging.getLogger('调度中心', options.i, logLevel);
   settings.logger = logger;
@@ -430,6 +438,7 @@ const test = () => {
   const spider = new (require('./test/youtube'))(settings);
   spider.start();
 };
+// a 默认是 scheduler
 switch (options.a) {
   case 'scheduler':
     scheduler();
